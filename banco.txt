@@ -1,0 +1,14 @@
+CREATE DATABASE `banco` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+
+
+CREATE TABLE `tabela` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `editora` varchar(45) NOT NULL,
+  `nome` varchar(500) NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`,`editora`,`nome`,`preco`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
