@@ -1,4 +1,3 @@
-from classes import Web
+from biblioteca import Magalu
 
-
-a = Web()
+jan = Magalu()

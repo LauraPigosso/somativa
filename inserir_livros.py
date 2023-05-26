@@ -1,4 +1,4 @@
-from conexao import conexao
+from conexao import conexao, cursor
 
 
 def limpa():
@@ -6,9 +6,22 @@ def limpa():
     cursor.execute("TRUNCATE tabela")
     conexao.commit()
 
+
+def lista_livros_filtro(marca):
+    if marca == "todos":
+        sql = 'SELECT * from tabela'
+    else:
+        sql = f"SELECT * from tabela WHERE editora = '{marca}'"
+    cursor.execute(sql)
+    return cursor.fetchall()
+
+def listar_livros():
+    sql = 'SELECT * from tabela'
+    cursor.execute(sql)
+    return cursor.fetchall()
+
+
 def inserir(editora, nome, preco):
-
-
     inserir_usuarios = f"""INSERT INTO tabela(editora, nome, preco)
         values
         ("{editora}", "{nome}", {preco});"""
@@ -16,3 +29,5 @@ def inserir(editora, nome, preco):
 
     cursor.execute(inserir_usuarios)
     conexao.commit()
+
+
