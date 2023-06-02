@@ -17,14 +17,15 @@ class Magalu:
         }
 
         self.driver = webdriver.Chrome()
-        self.driver.maximize_window()
+        self.driver.minimize_window()
 
         limpa()
         self.pega_apple()
         self.pega_galera()
         self.pega_record()
-        self.pega_rocco()
         self.pega_compainha()
+        self.pega_rocco()
+
 
     def pega_apple(self):
         self.driver.get(self.dados_biblioteca["apple"])
@@ -33,7 +34,6 @@ class Magalu:
                 editora = "apple"
                 nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(a))).text
                 preco = self.driver.find_element(By.XPATH,self.dados_biblioteca["preco"].replace('$preco$', str(a))).text.replace("R$", "").replace(",", ".")
-                print(preco)
                 inserir(editora, nome, preco)
         finally:
             pass
@@ -62,6 +62,18 @@ class Magalu:
         finally:
             pass
 
+    def pega_compainha(self):
+        self.driver.get(self.dados_biblioteca["compainha"])
+        try:
+            for o in range(1, 11):
+                editora = "compainha"
+                nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
+                preco = self.driver.find_element(By.XPATH,self.dados_biblioteca["preco"].replace('$preco$', str(o))).text.replace("R$", "").replace(",", ".")
+                inserir(editora, nome, preco)
+            print('')
+        finally:
+            pass
+
     def pega_rocco(self):
         self.driver.get(self.dados_biblioteca["rocco"])
         try:
@@ -71,18 +83,6 @@ class Magalu:
                 preco = self.driver.find_element(By.XPATH,self.dados_biblioteca["preco"].replace('$preco$', str(d))).text.replace("R$", "").replace(",", ".")
                 inserir(editora, nome, preco)
 
-            print('')
-        finally:
-            pass
-
-    def pega_compainha(self):
-        self.driver.get(self.dados_biblioteca["compainha"])
-        try:
-            for o in range(1, 11):
-                editora = "rocco"
-                nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                preco = self.driver.find_element(By.XPATH,self.dados_biblioteca["preco"].replace('$preco$', str(o))).text.replace("R$", "").replace(",", ".")
-                inserir(editora, nome, preco)
             print('')
         finally:
             pass

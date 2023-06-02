@@ -30,4 +30,10 @@ def inserir(editora, nome, preco):
     cursor.execute(inserir_usuarios)
     conexao.commit()
 
+def tocsv:
+    bda = bd.bd()
+    d = bda.listatudo()
+    df = pd.DataFrame(d, columns=["editora", "nome", "preco"])
+    df.to_csv('celulares.csv', sep=';', encoding='utf-8', index=False)
+
 

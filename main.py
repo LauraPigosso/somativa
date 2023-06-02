@@ -1,3 +1,3 @@
-from biblioteca import Magalu
+from janela import Janela
 
-jan = Magalu()
+jan = Janela()

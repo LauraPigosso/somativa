@@ -33,11 +33,14 @@ class Janela():
         self.frame_1.place(relx=0.03, rely=0.10, relwidth=0.94, relheight=0.11)  # Criar cabeçario
 
         self.frame_2 = Frame(self.janela, bg='#7fc8f8', highlightthickness=0.5, highlightbackground="#9c9a92")
-        self.frame_2.place(relx=0.03, rely=0.50, relwidth=0.94, relheight=0.45)  # Criar quadro de mostragem
+        self.frame_2.place(relx=0.03, rely=0.35, relwidth=0.94, relheight=0.55)  # Criar quadro de mostragem
 
     # Botão para atualizar
     def botao(self):
         self.btAtualizar = Button(self.frame_1, text="ATUALIZAR", command= self.Thread1)
+        self.btAtualizar.place(relx=0.15, rely=0.28, relwidth=0.3, relheight=0.5)
+
+        self.btAtualizar = Button(self.frame_1, text="ATUALIZAR", command=self.Thread1)
         self.btAtualizar.place(relx=0.15, rely=0.28, relwidth=0.3, relheight=0.5)
 
     # Quadro de mostragem
@@ -55,13 +58,12 @@ class Janela():
         self.listaLiv.column('#3', width=188)
         self.listaLiv.column('#4', width=70)
 
-        self.listaLiv.place(relx=0.01, rely=0.1, relwidth=0.95, relheight=0.85)
+        self.listaLiv.place(relx=0.01, rely=0.05, relwidth=0.95, relheight=0.9)
 
         # Barra de Rolagem
         self.scroolLista = Scrollbar(self.frame_2, orient='vertical', bg='#ffe45e')
         self.listaLiv.configure(yscrollcommand=self.scroolLista.set)
-        self.scroolLista.place(relx=0.96, rely=0.1, relwidth=0.04, relheight=0.85)
-
+        self.scroolLista.place(relx=0.96, rely=0.05, relwidth=0.04, relheight=0.9)
 
     def Thread1(self):
         t1 = Thread(target=self.Atualizar())
@@ -92,4 +94,3 @@ class Janela():
             self.listaLiv.insert(parent='', index=0, values=i)
 
 
-Janela()
