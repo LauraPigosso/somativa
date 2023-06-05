@@ -1,3 +1,6 @@
+import pandas as pd
+import bd
+
 from conexao import conexao, cursor
 
 
@@ -15,6 +18,7 @@ def lista_livros_filtro(marca):
     cursor.execute(sql)
     return cursor.fetchall()
 
+
 def listar_livros():
     sql = 'SELECT * from tabela'
     cursor.execute(sql)
@@ -30,10 +34,16 @@ def inserir(editora, nome, preco):
     cursor.execute(inserir_usuarios)
     conexao.commit()
 
-def tocsv:
+
+def toxlsx():
     bda = bd.bd()
-    d = bda.listatudo()
+    d = bda.listar()
     df = pd.DataFrame(d, columns=["editora", "nome", "preco"])
-    df.to_csv('celulares.csv', sep=';', encoding='utf-8', index=False)
+    df.to_excel('livros.xlsx', index=False, header=True)
 
 
+def tocsv():
+    bda = bd.bd()
+    d = bda.listar()
+    df = pd.DataFrame(d, columns=["editora", "nome", "preco"])
+    df.to_csv('livros.csv', sep=';', encoding='utf-8', index=False)

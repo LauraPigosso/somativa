@@ -1,0 +1,9 @@
+CREATE SCHEMA `livros` ;
+
+ALTER TABLE `livros`.`unicamp` 
+ADD COLUMN `preco` DOUBLE NOT NULL AFTER `nome`,
+CHANGE COLUMN `nomeunic` `marca` VARCHAR(15) NOT NULL ,
+CHANGE COLUMN `precounic` `nome` VARCHAR(45) NOT NULL , RENAME TO  `livros`.`biblioteca` ;
+
+
+

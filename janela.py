@@ -43,6 +43,9 @@ class Janela():
         self.btAtualizar = Button(self.frame_1, text="ATUALIZAR", command=self.Thread1)
         self.btAtualizar.place(relx=0.15, rely=0.28, relwidth=0.3, relheight=0.5)
 
+        self.btExport = Button(self.frame_1, text="EXPORTAR", height=2, width=13, command=self.open_win2)
+        self.btExport.pack(side=LEFT, padx=10)
+
     # Quadro de mostragem
     def lista_frame2(self):
         self.listaLiv = ttk.Treeview(self.frame_2, height=3, columns=("", "editora", "nome", "preco"))
@@ -93,4 +96,23 @@ class Janela():
         for i in lista_livros_filtro(marca):
             self.listaLiv.insert(parent='', index=0, values=i)
 
+    def open_win2(self):
+        self.exp = Toplevel(self.root)
+        self.exp.geometry("300x250")
+        self.exp.resizable(False, False)
+        self.exp.iconbitmap("2742085.ico")
+        self.exp.transient(self.root)
+        self.exp.focus_force()
+        self.exp.grab_set()
+        self.labelcar = Label(self.exp, text="SELECIONE O FORMATO A\n SER EXPORTADO", font=('Helvetica 11 bold'))
+        self.labelcar.pack(anchor=CENTER, ipady=20)
 
+        combobox = Combobox(self.exp, state="readonly")
+        combobox['values'] = ("xlsx", "csv")
+        combobox.current(0)
+        combobox.pack(padx=20)
+
+        botaoexp = Button(self.exp, text="EXPORTAR", height=2, width=13,
+                          command=lambda: [exporta.exp.toxlsx() if combobox.get() == "xlsx" else exporta.exp.tocsv(),
+                                           self.exp.destroy()])
+        botaoexp.pack(anchor=CENTER, pady=30)

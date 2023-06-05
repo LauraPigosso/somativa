@@ -1,0 +1,14 @@
+CREATE SCHEMA `loteria` ;
+
+USE `loteria`;
+
+CREATE TABLE `loteria`.`loterialegal` (
+  `Id` INT NULL,
+  `data` VARCHAR(15),
+  `col1` VARCHAR(3),
+  `col2` VARCHAR(3),
+  `col3` VARCHAR(3),
+  `col4` VARCHAR(4),
+  `col5` VARCHAR(4),
+  `col6` VARCHAR(4),
+  PRIMARY KEY (`Id`));
