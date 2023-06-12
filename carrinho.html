@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Criativa - Carrinho</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="carrinho.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Tela inicial</a></li>  <!--te leva para o menu-->
+        <li><a href="lista.html">Lista de Produtos</a></li>  <!--te leva para a lista de produtos-->
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Seu Carrinho</h1>
+    <div class="product-grid"> <!--usei grid para deixar reponsivo-->
+
+      <!-- Os seguintes blocos de codigo representam produtos individuais -->
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem1.jpg" alt="Grid 1">
+        <div class="product-name">Sticker LGBTQIA+</div>
+        <div class="product-price">$2.00</div> <!--preco-->
+        <div class="product-quantity"> 
+          <button class="menos">-</button> <!--muda para mais-->
+          <span class="quantidade">0</span> <!--muda de acordo com a quantidade-->
+          <button class="mais">+</button> <!--muda para menos-->
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem2.jpg" alt="Grid 1">
+        <div class="product-name">Sticker artistas</div>
+        <div class="product-price">$3.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button> 
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem3.jpg" alt="Grid 1">
+        <div class="product-name">Sticker cogumelos</div>
+        <div class="product-price">$4.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem4.jpg" alt="Grid 1">
+        <div class="product-name">Sticker palhaços</div>
+        <div class="product-price">$5.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem5.jpg" alt="Grid 1">
+        <div class="product-name">Sticker coelinhos</div>
+        <div class="product-price">$6.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem6.jpg" alt="Grid 1">
+        <div class="product-name">Sticker gatos halloween </div>
+        <div class="product-price">$6.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem7.jpg" alt="Grid 1">
+        <div class="product-name">Sticker gatos </div>
+        <div class="product-price">$7.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem88.jpg" alt="Grid 1">
+        <div class="product-name">Sticker vaquinhas palhaços</div>
+        <div class="product-price">$8.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem9.jpg" alt="Grid 1">
+        <div class="product-name">Pin homem cogumelo</div>
+        <div class="product-price">$9.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+      <div class="product" data-product-id="1">
+        <img src="imagens/imagem10.jpg" alt="Grid 1">
+        <div class="product-name">Sticker vaquinhas</div>
+        <div class="product-price">$10.00</div>
+        <div class="product-quantity">
+          <button class="menos">-</button>
+          <span class="quantidade">0</span>
+          <button class="mais">+</button>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="total">
+      <h2>Quantidade de itens: <span id="quantidade-total">0</span></h2> <!--muda de acordo com a quantidade total-->
+      <h2>Valor total da compra: <span id="valor-total">$0.00</span></h2> <!--sera somado os precos no js e mostrara aqui-->
+      <button id="finalizar" onclick="resetData()">FINALIZAR<br>COMPRA</button>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="container">
+      <div id="contact">
+        <h3>Fale comigo</h3>
+        <p>Rua das Sakuras, 805<br>
+          Campinas, SP<br>
+          Phone: (12) 3220-7070<br>
+          Email: LauraPig@gmail.com</p>
+      </div>
+
+      <div id="sobre">
+        <h3>Sobre o site</h3>
+        <p>Bom dia a todos, este site foi produzido para o projeto integrador do SENAI Roberto Mange.<br>
+          Meu nome é Laura Pigosso e estou no primeiro semestre no curso de Desenvolvimento de<br> sistemas.
+          Para ele usei ferramentas como: HTML, CSS, Javascript, Adobe Photoshope, Canva, Coolors<br>
+          e entre outros. As imagens dos produtos foram retirados do Pinterest onde o artista é<br>
+          deconhecido por mim.
+          Este trabalho contém as participações dos professores: Celso, Lindonar e Rodrigo.<br>
+        </p>
+      </div>
+    
+    </div>
+  </footer>
+  <script type="text/javascript" src="carrinho.js"></script>  <!--chamar o javascript-->
+
+
+</body>
+
+
+</html>

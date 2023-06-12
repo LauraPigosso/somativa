@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Lista de Produtos </title> <!--site que sera usado para html-->
+  <link rel="stylesheet" href="lista.css"> <!--conecta o html com o css-->
+  <!--chama bootscrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<header>
+  <h1>Lista de Produtos</h1>
+  <h2>
+    <a href="index.html">Voltar a tela inicial</a> <!--adiciona um 'botao' para vc voltar a tela inicial-->
+  </h2>
+</header>
+
+<body>
+
+  <div class="product-grid"> <!--usei grid para deixar reponsivo-->
+    <div class="product">
+      <img src="imagens/imagem1.jpg" alt="Produto 1"> <!--imagens do produto-->
+      <div class="product-name">Sticker<br> LGBTQIA+</div> <!--nome dos produtos-->
+      <div class="product-price">$1.00</div> <!--preço dos produtos-->
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem2.jpg" alt="Produto 2">
+      <div class="product-name">Sticker<br>artistas</div>
+      <div class="product-price">$2.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem3.jpg" alt="Produto 3">
+      <div class="product-name">Sticker<br>cogumelos</div>
+      <div class="product-price">$3.oo</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem4.jpg" alt="Produto 4">
+      <div class="product-name">Sticker<br>palhaços</div>
+      <div class="product-price">$4.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem5.jpg" alt="Produto 5">
+      <div class="product-name">Sticker<br>coelinhos</div>
+      <div class="product-price">$5.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem6.jpg" alt="Produto 6">
+      <div class="product-name">Sticker<br> gatos<br>halloween</div>
+      <div class="product-price">$6.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem7.jpg" alt="Produto 7">
+      <div class="product-name">Sticker<br> gatos<br>fantasmas</div>
+      <div class="product-price">$7.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem88.jpg" alt="Produto 8">
+      <div class="product-name">Sticker<br> vaquinhas<br>palhaços</div>
+      <div class="product-price">$8.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem9.jpg" alt="Produto 9">
+      <div class="product-name">Pin<br> homem<br>cogumelo</div>
+      <div class="product-price">$9.00</div>
+    </div>
+
+    <div class="product">
+      <img src="imagens/imagem10.jpg" alt="Produto 10">
+      <div class="product-name">Sticker <br> vaquinhas</div>
+      <div class="product-price">$10.00</div>
+    </div>
+
+    <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Click aqui para<br>
+      ver algo legal</button>  <!--botao bootstrap com mensagem-->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./lista.js"></script>  <!--chamar o javascript-->
+
+</body>
+
+</html>

@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+/* Importa a fonte 'Quicksand' do Google Fonts */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* configuraçao padrao para todos os elementos: margem, preenchimento e modelo de caixa */
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	background-color: #f0f0f0;
+}
+/* define a fonte 'Quicksand' e a cor de fundo */
+
+header {
+	background-color: #d0e9e9;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/* define a cor de fundo, raio do canto, display flex e alinhamento do conteudo */
+
+header img {
+	padding: 1em;
+	position: relative;
+	margin: 1.5em;
+	width: 200px;
+}
+/*  define o preenchimento, posição, margem e largura */
+
+.container {
+	max-width: 70em;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/* define a largura maxima, margem, display flex e alinhamento do conteudo */
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+/* remove os marcadores de lista e define o display flex */
+
+nav ul li {
+	margin-right: 2rem;
+}
+/* define a margem direita */
+
+nav ul li a {
+	color: #272320;
+	font-size: clamp(1em, 1em + 0.5vw, 3em);
+	font-family: 'Quicksand', sans-serif;
+}
+/* define a cor do texto, tamanho da fonte com base na largura da viewport e a fonte 'Quicksand' */
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+/* define uma decoracao de texto */
+
+#carrinho {
+	color: #000000;
+	font-family: 'Quicksand', sans-serif;
+	padding: 0.7em 1.7em;
+	margin: 0.5em;
+	font-size: 18px;
+	border-radius: 0.5em;
+	background: #b6e2e2;
+	transition: all 0.3s;
+	box-shadow: 6px 6px 12px #81d1d1, -6px -6px 12px #ffffff;
+}
+/* define a cor do texto, fonte 'Quicksand', preenchimento, margem, tamanho da fonte, raio do canto, cor de fundo, transicao e sombra */
+
+#carrinho a {
+	text-decoration: none;
+	color: #272320;
+}
+/* remove a decoracao do texto e define a cor do texto */
+
+#carrinho:hover {
+	background-color: #b7cccc;
+}
+/* quando o cursor é colocado em cima define a cor de fundo */
+
+#carrinho:active {
+	box-shadow: inset 4px 4px 12px #a5d8d8, inset -4px -4px 12px #81d1d1;
+}
+/* (clique pressionado): define uma sombra interna */
+
+.carousel {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 2em 0;
+}
+/*  define a posicao, largura, margem, overflow e preenchimento */
+
+.carousel-container {
+	display: flex;
+	transition: transform 0.5s ease;
+}
+/* Estiliza o elemento com a classe 'carousel-container': define o display flex e uma transicao */
+
+.carousel-item {
+	flex: 0 0 19%;
+	padding: 10px;
+	text-align: center;
+	background-color: #f0f0f0;
+	margin: 4px;
+	border: 3px solid #d0aad1;
+	border-radius: 10px;
+}
+/* define a flexibilidade, preenchimento, alinhamento do texto, cor de fundo, margem, borda e raio do canto */
+
+.carousel-item img {
+	width: 8em;
+	height: auto;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+/* define a largura, altura, margem inferior e raio do canto */
+
+.carousel-item h3 {
+	font-size: 1.5em;
+	font-family: 'Quicksand', sans-serif;
+}
+/*  define o tamanho da fonte e a fonte 'Quicksand' */
+
+.carousel-item p {
+	font-size: 0;
+	margin: 0;
+}
+/* Estiliza os paragrafos dos itens do carrossel: define o tamanho da fonte e a margem */
+
+.prev-button,
+.next-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(34, 4, 41, 0.233);
+	color: #ffffff;
+	border: none;
+	outline: none;
+	font-size: 24px;
+	padding: 10px 20px;
+	cursor: pointer;
+	z-index: 1;
+}
+/* define a posicao, cor de fundo, cor do texto, borda, tamanho da fonte, preenchimento, cursor e camada z-index */
+
+.prev-button {
+	left: 0;
+}
+/* define a posicao a esquerda */
+
+.next-button {
+	right: 0;
+}
+/*define a posicao a direita */
+
+#daily-deals {
+	background-color: #f0f0f0;
+	padding: 1em;
+}
+/* cor de fundo e o preenchimento */
+
+.product-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+/*  layout de grid com 3 colunas e espaçamento entre as celulas, usei grid pra deixar responsivo com mais facilidade */
+
+.product {
+	border: 5px solid #ffd797;
+	border-radius: 30px;
+	padding: 10px;
+	text-align: center;
+	background-color: #f0f0f0;
+}
+/*  define a borda, raio do canto, preenchimento, alinhamento do texto e cor de fundo */
+
+.product img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5%;
+	border: 3px solid #d0aad1;
+}
+/* define a largura maxima, altura automatica, raio do canto, borda e raio do canto adicional */
+
+.product-name {
+	font-weight: bold;
+	margin-top: 10px;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2em;
+}
+
+.product-price {
+	color: #888;
+	font-size: 1em;
+}
+/* cor do texto e o tamanho da fonte */
+
+.product-button:hover {
+	background-color: #f2aaae;
+}
+/* quando o cursor é colocado em cima define a cor de fundo */
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 50px 0;
+}
+/* define o display flex, quebra de linha, alinhamento e margem */
+
+form input[type="email"] {
+	padding: 10px;
+	border-radius: 5px 0 0 5px;
+	border: none;
+	flex-grow: 1;
+}
+/* define o preenchimento, raio do canto da esquerda, borda, flexibilidade e crescimento */
+
+form button[type="submit"] {
+	background-color: #d0aad1;
+	color: #fdfaf9;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+}
+/* define a cor de fundo, cor do texto, borda, preenchimento, raio do canto da direita e tipo cursor */
+
+form button[type="submit"]:hover {
+	background-color: #f2aaae;
+}
+
+footer {
+	background-color: #f2aaae;
+	border-radius: 20px;
+	color: #272320;
+	padding: 5px 0;
+	margin: 4px;
+}
+/* Estiliza o elemento <footer>: define a cor de fundo, raio do canto, cor do texto, preenchimento e margem */
+
+footer .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 5px;
+}
+/* define o display flex, quebra de linha, alinhamento e preenchimento */
+
+footer h3 {
+	margin-bottom: 20px;
+}
+/* define a margem inferior */
+
+@media screen and (max-width: 870px) {
+	header img {
+		display: none;
+		visibility: hidden;
+		margin: 0cm;
+	}
+  /* apaga a imagem no cabecalho em telas menores */
+
+	#daily-deals .product-grid {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+  /* Altera o layout dos produtos em promocao para uma coluna em telas menores que 770*/
+
+	.carousel-item img {
+		width: 6em;
+		height: 6em;
+		border-radius: 10px;
+	}
+  /* Reduz o tamanho das imagens nos itens do carrossel em telas menores */
+
+  #pro {
+    display: none;
+		visibility: hidden;
+		margin: 0cm;
+  }
+  /* apaga o botao de promocoes em telas menores */
+
+  #sobre {
+    display: none;
+		visibility: hidden;
+		margin: 0cm;
+  }
+/* apaga o botao de sobre nos em telas menores */
+  #con {
+    display: none;
+		visibility: hidden;
+		margin: 0cm;
+  }
+/* apaga o botao de contato nos em telas menores */
+
+  header {
+	background-color: #d0e9e9;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+
+  }
+  /* Estiliza o cabeçalho em telas menores */
+
+}
+
+@media screen and (min-width: 771px) and (max-width: 2000px) {
+	.carousel-container {
+		width: calc(100% - 40px);
+	}
+  /* Reduz a largura do carrossel container em telas medias */
+
+	.carousel-item {
+		width: calc(100% / 3);
+	}
+  /* Ajusta a largura dos itens do carrossel em telas medias */
+
+	.carousel-item:last-child {
+		margin-right: 20px;
+	}
+  /* Adiciona uma margem a direita para o ultimo item do carrossel em telas medias */
+}
+
+@media screen and (max-width: 600px) {
+	#newsletter h2 {
+		display: none;
+		visibility: hidden;
+		margin: 0cm;
+	}
+  /* apaga a mensagem do forms em telas menores */
+}
+
+@media screen and (max-width: 420px) {
+	#newsletter h2 {
+		display: none;
+		visibility: hidden;
+		margin: 0cm;
+	}
+
+	nav ul li a {
+		font-size: 1rem;
+	}
+  /* Ajusta o tamanho da fonte dos links no cabeçalho em telas menores */
+
+}
+
+@media screen and (max-width: 270px) {
+	#newsletter h2 {
+		display: none;
+		visibility: hidden;
+		margin: 0cm;
+	}
+
+	#carrinho {
+		margin-right: 70px;
+		font-size: 10px;
+	}
+
+	header img {
+		display: none;
+		visibility: hidden;
+		margin: 0cm;
+	}
+  /* apaga o carrinho de compras, a imagem no cabeçalho e ajusta o tamanho da fonte dos links em telas muito pequenas */
+}
