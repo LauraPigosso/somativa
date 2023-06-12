@@ -91,10 +91,26 @@ class Janela():
         for i in listar_livros():
             self.listaLiv.insert(parent='', index=0, values=i)
 
-    def select_list_filtro(self, marca):
-        self.listaLiv.delete(*self.listaLiv.get_children())
-        for i in lista_livros_filtro(marca):
-            self.listaLiv.insert(parent='', index=0, values=i)
+   def exportar_dados(self, formato):
+        conn = sqlite3.connect('meu_banco_de_dados.db')
+        cursor = conn.cursor()
+
+        tabela_selecionada = self.variable.get()
+
+        try:
+            df = pd.read_sql_query("SELECT * from {}".format(tabela_selecionada), conn)
+            if formato == "xlsx":
+                df.to_excel(f"{tabela_selecionada}.xlsx", index=False)
+            elif formato == "csv":
+                df.to_csv(f"{tabela_selecionada}.csv", index=False)
+            messagebox.showinfo('Sucesso', f'Dados exportados com sucesso para {tabela_selecionada}.{formato}')
+
+        except pd.io.sql.DatabaseError as err:
+            messagebox.showerror('Erro', 'Erro no banco de dados: {}'.format(err))
+        except Exception as err:
+            messagebox.showerror('Erro', 'Ocorreu um erro: {}'.format(err))
+        finally:
+            conn.close()
 
     def open_win2(self):
         self.exp = Toplevel(self.root)
@@ -113,6 +129,5 @@ class Janela():
         combobox.pack(padx=20)
 
         botaoexp = Button(self.exp, text="EXPORTAR", height=2, width=13,
-                          command=lambda: [exporta.exp.toxlsx() if combobox.get() == "xlsx" else exporta.exp.tocsv(),
-                                           self.exp.destroy()])
+                          command=lambda: [self.exportar_dados(combobox.get()), self.exp.destroy()])
         botaoexp.pack(anchor=CENTER, pady=30)
