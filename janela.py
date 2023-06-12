@@ -91,43 +91,54 @@ class Janela():
         for i in listar_livros():
             self.listaLiv.insert(parent='', index=0, values=i)
 
-   def exportar_dados(self, formato):
-        conn = sqlite3.connect('meu_banco_de_dados.db')
-        cursor = conn.cursor()
+    def select_list_filtro(self, editoras):
+        self.listaLiv.delete(*self.listaLiv.get_children())
+        for i in lista_livros_filtro(editoras):
+            self.listaLiv.insert(parent='', index=0, values=i)
 
-        tabela_selecionada = self.variable.get()
+   def expxlsx(self, formato):
+       wb = Workbook()
+       planilha = wb.active
+       planilha.title = 'arquivo'
 
-        try:
-            df = pd.read_sql_query("SELECT * from {}".format(tabela_selecionada), conn)
-            if formato == "xlsx":
-                df.to_excel(f"{tabela_selecionada}.xlsx", index=False)
-            elif formato == "csv":
-                df.to_csv(f"{tabela_selecionada}.csv", index=False)
-            messagebox.showinfo('Sucesso', f'Dados exportados com sucesso para {tabela_selecionada}.{formato}')
+       aux = 1
+       for item in self.lista["lista_editora"]:
+           planilha[f'A{aux}'] = item
+           aux += 1
 
-        except pd.io.sql.DatabaseError as err:
-            messagebox.showerror('Erro', 'Erro no banco de dados: {}'.format(err))
-        except Exception as err:
-            messagebox.showerror('Erro', 'Ocorreu um erro: {}'.format(err))
-        finally:
-            conn.close()
+       aux = 1
+       for item in self.lista["lista_nomes"]:
+           planilha[f'A{aux}'] = item
+           aux += 1
 
-    def open_win2(self):
-        self.exp = Toplevel(self.root)
-        self.exp.geometry("300x250")
-        self.exp.resizable(False, False)
-        self.exp.iconbitmap("2742085.ico")
-        self.exp.transient(self.root)
-        self.exp.focus_force()
-        self.exp.grab_set()
-        self.labelcar = Label(self.exp, text="SELECIONE O FORMATO A\n SER EXPORTADO", font=('Helvetica 11 bold'))
-        self.labelcar.pack(anchor=CENTER, ipady=20)
+       aux = 1
+       for item in self.lista["lista_precos"]:
+           planilha[f'B{aux}'] = item
+           aux += 1
 
-        combobox = Combobox(self.exp, state="readonly")
-        combobox['values'] = ("xlsx", "csv")
-        combobox.current(0)
-        combobox.pack(padx=20)
+        wb.save('arquivo.xlsx')
 
-        botaoexp = Button(self.exp, text="EXPORTAR", height=2, width=13,
-                          command=lambda: [self.exportar_dados(combobox.get()), self.exp.destroy()])
-        botaoexp.pack(anchor=CENTER, pady=30)
+
+def expcvs(self, formato):
+    wb = Workbook()
+    planilha = wb.active
+    planilha.title = 'arquivo'
+
+    aux = 1
+    for item in self.lista["lista_editora"]:
+        planilha[f'A{aux}'] = item
+        aux += 1
+
+    aux = 1
+    for item in self.lista["lista_nomes"]:
+        planilha[f'A{aux}'] = item
+        aux += 1
+
+    aux = 1
+    for item in self.lista["lista_precos"]:
+        planilha[f'B{aux}'] = item
+        aux += 1
+
+    wb.save('arquivo.cvs')
+
+

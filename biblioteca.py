@@ -26,6 +26,12 @@ class Magalu:
         self.pega_compainha()
         self.pega_rocco()
 
+        self.lista = {
+            "lista_editora": [],
+            "lista_nomes": [],
+            "lista_precos": []
+        }
+
     def pega_apple(self):
         self.driver.get(self.dados_biblioteca["apple"])
 
@@ -34,11 +40,16 @@ class Magalu:
                 try:
 
                     editora = "apple"
+                    self.lista["lista_editora"].append(editora)
+
                     nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',
-                                                                                                      str(o))).text.replace(
-                        "R$", "").replace(",", ".")
+                    self.lista["lista_nomes"].append(nome)
+
+                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',str(o))).text.replace("R$", "").replace(",", ".")
+                    self.lista["lista_precos"].append(preco)
+
                     inserir(editora, nome, preco)
+
                 except:
                     continue
         finally:
@@ -51,10 +62,14 @@ class Magalu:
                 try:
 
                     editora = "galera"
+                    self.lista["lista_editora"].append(editora)
+
                     nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',
-                                                                                                      str(o))).text.replace(
-                        "R$", "").replace(",", ".")
+                    self.lista["lista_nomes"].append(nome)
+
+                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',str(o))).text.replace("R$", "").replace(",", ".")
+                    self.lista["lista_precos"].append(preco)
+
                     inserir(editora, nome, preco)
                 except:
                     continue
@@ -69,10 +84,14 @@ class Magalu:
                 try:
 
                     editora = "record"
+                    self.lista["lista_editora"].append(editora)
+
                     nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',
-                                                                                                      str(o))).text.replace(
-                        "R$", "").replace(",", ".")
+                    self.lista["lista_nomes"].append(nome)
+
+                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',str(o))).text.replace("R$", "").replace(",", ".")
+                    self.lista["lista_precos"].append(preco)
+
                     inserir(editora, nome, preco)
                 except:
                     continue
@@ -86,10 +105,14 @@ class Magalu:
                 try:
 
                     editora = "compainha"
+                    self.lista["lista_editora"].append(editora)
+
                     nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',
-                                                                                                      str(o))).text.replace(
-                        "R$", "").replace(",", ".")
+                    self.lista["lista_nomes"].append(nome)
+
+                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',str(o))).text.replace("R$", "").replace(",", ".")
+                    self.lista["lista_precos"].append(preco)
+
                     inserir(editora, nome, preco)
                 except:
                     continue
@@ -104,10 +127,14 @@ class Magalu:
                 try:
 
                     editora = "rocco"
+                    self.lista["lista_editora"].append(editora)
+
                     nome = self.driver.find_element(By.XPATH, self.dados_biblioteca["nome"].replace('&nome&', str(o))).text
-                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',
-                                                                                                      str(o))).text.replace(
-                        "R$", "").replace(",", ".")
+                    self.lista["lista_nomes"].append(nome)
+
+                    preco = self.driver.find_element(By.XPATH, self.dados_biblioteca["preco"].replace('$preco$',str(o))).text.replace("R$", "").replace(",", ".")
+                    self.lista["lista_precos"].append(preco)
+
                     inserir(editora, nome, preco)
                 except:
                     continue
